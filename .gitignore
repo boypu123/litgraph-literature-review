@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# local review archives written by the plugin
+.literature-review/
+
+# scratch
+dev/
+
+# self-check / smoke-run artifacts
+*-result.txt
+smoke-review.md
+check-result.txt
+dev-yaml-check.txt
+openalex-probe.txt
+
+# editor / OS noise
+.DS_Store
+Thumbs.db
+*.log

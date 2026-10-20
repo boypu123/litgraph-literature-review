@@ -1,0 +1,54 @@
+{
+  "name": "dsh-litgraph",
+  "version": "0.2.0",
+  "description": "AI literature discovery and review plugin for DeepSeek Harness: multi-source paper search (OpenAlex / Crossref / Semantic Scholar / arXiv), citation-and-topic knowledge graph, six-dimension quality scoring, an AI-written structured literature review, and per-workspace review archives under .literature-review/ — with a full Web GUI workspace.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "literature-review",
+    "research",
+    "openalex",
+    "arxiv",
+    "knowledge-graph"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boypu123/litgraph-literature-review.git"
+  },
+  "homepage": "https://github.com/boypu123/litgraph-literature-review#readme",
+  "bugs": {
+    "url": "https://github.com/boypu123/litgraph-literature-review/issues"
+  },
+  "scripts": {
+    "check": "node check.mjs",
+    "smoke": "node smoke.mjs"
+  }
+}
