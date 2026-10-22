@@ -222,6 +222,9 @@ node check.mjs
 
 # 离线冒烟：用假 ctx 跑通路由与工具，产出 smoke-result.txt / smoke-review.md
 node smoke.mjs
+
+# 离线渲染面板：用极简 React shim 执行组件，排查“点了没反应”这类渲染崩溃
+node dev/render-probe.mjs   # 结果写 dev/render-probe.txt
 ```
 
 **改宿主代码后怎么让它生效。** 宿主的 HMR 只监听 profile 补丁层（启动日志里是 `watching []`），`node_modules` 内的文件改动**不会**触发重载。要让改动生效，把补丁里这个条目的任一配置值改一下（组合变化会让 loader 带新时间戳重新 import）：
